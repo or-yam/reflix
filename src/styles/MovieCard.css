@@ -1,0 +1,31 @@
+.movie-box {
+  position: relative;
+  height: min-content;
+  cursor: pointer;
+  margin: 15px;
+}
+
+
+.movie-box img {
+  height: 300px;
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 3px 3px gray;
+}
+
+.movie-box img:hover{
+  height: 330px;
+  width: 230px;
+}
+
+.addRmvBtn {
+  position: absolute;
+  top: 5%;
+  left: 90%;
+  z-index: 5;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: large;
+  border: none;
+}

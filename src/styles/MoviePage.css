@@ -1,0 +1,19 @@
+.movie-page {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  font-size: xx-large;
+}
+
+.movie-page img {
+  margin: 20px;
+  box-shadow: 3px 3px gray;
+  height: 400px;
+  width: 300px;
+  border-radius: 20px;
+}

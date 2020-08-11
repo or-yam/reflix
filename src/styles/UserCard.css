@@ -1,0 +1,18 @@
+.user-box {
+  color:#141414;
+  width: 20%;
+  padding-top: 10px;
+  margin: 10px;
+  background-color: #bbb7b5;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.user-box img {
+  width: 12rem;
+  height: auto;
+}

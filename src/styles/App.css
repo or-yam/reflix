@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #141414;
+  color: #bbb7b5;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.navbar {
+  padding-left: 7px;
+  height: 40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: x-large;
+  text-decoration: none;
+}
