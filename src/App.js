@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './styles/App.css';
-import movieCatalog from '../data/MoviesCatalog';
-import dummyUsers from '../data/dummyUsers';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import movieCatalog from './data/MoviesCatalog';
+import dummyUsers from './data/dummyUsers';
 import Landing from './Components/Landing';
 import Catalog from './Components/Catalog';
 import MoviePage from './Components/MoviePage';
+import './styles/App.css';
 class App extends Component {
   constructor() {
     super();
@@ -14,6 +14,7 @@ class App extends Component {
       currentUser: dummyUsers[0],
       moviesList: movieCatalog,
       searchField: '',
+      moviesRented: [],
     };
   }
 
@@ -21,10 +22,35 @@ class App extends Component {
     this.setState({ searchField: event.target.value });
   };
 
-  updateRent = (id) => {
-    const toUpdate = this.state.moviesList.find((m) => m.id === id).isRented;
-    toUpdate = !toUpdate;
-    // this.setState(moviesList: moviesCatalog.find((m) => m.id === id).isRented)
+  updateBudget = (price) => {
+    let user = { ...this.state.currentUser };
+    user.budget = user.budget += price;
+    if (user.budget < 0) {
+      alert('Not enough money');
+      return this.state.currentUser;
+    } else {
+      return user;
+    }
+  };
+
+  updateRented = (moviesArr) => moviesArr.map((m) => m.isRented && m);
+
+  updateRent = (movieId) => {
+    const updatedMovies = [...this.state.moviesList];
+    const movieToUpdate = updatedMovies.find((m) => m.id === movieId);
+    const updatedUser = this.updateBudget(movieToUpdate.isRented ? 7 : -7);
+
+    if (updatedUser.budget !== this.state.currentUser.budget) {
+      movieToUpdate.isRented = !movieToUpdate.isRented;
+      updatedMovies.map((m) => (m.id === movieId ? (m = movieToUpdate) : m));
+      const rented = this.updateRented(updatedMovies);
+
+      this.setState({
+        moviesList: updatedMovies,
+        moviesRented: rented,
+        currentUser: updatedUser,
+      });
+    }
   };
 
   render() {
@@ -36,11 +62,6 @@ class App extends Component {
     return (
       <>
         <Router>
-          <nav className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/catalog">Catalog</Link>
-            <Link to="/">Reflix</Link>
-          </nav>
           <Route
             path="/"
             exact
@@ -54,9 +75,11 @@ class App extends Component {
             render={({ match }) => (
               <Catalog
                 match={match}
+                updateRent={this.updateRent}
                 onSearchChange={this.onSearchChange}
                 user={state.currentUser}
                 movies={filteredMovies}
+                rented={state.moviesRented}
               />
             )}
           />

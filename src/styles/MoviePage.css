@@ -17,3 +17,10 @@
   width: 300px;
   border-radius: 20px;
 }
+
+.backBtn {
+  display: inline-block;
+  margin-top: 55px;
+  font-size: xx-large;
+  color: var(--secondary-color);
+}

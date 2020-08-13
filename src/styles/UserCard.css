@@ -1,15 +1,32 @@
+.users-container {
+margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .user-box {
-  color:#141414;
+  overflow: hidden;
+  color: var(--secondary-text-color);
   width: 20%;
-  padding-top: 10px;
+  padding: 0;
   margin: 10px;
-  background-color: #bbb7b5;
   display: grid;
   text-align: center;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
   cursor: pointer;
+ 
+}
+
+.user-box img{
+  border: 2px solid rgb(77, 74, 74);
+}
+
+.user-box img:hover {
+  border: 5px solid #fff;
+  color: #fff;
+
 }
 
 .user-box img {
