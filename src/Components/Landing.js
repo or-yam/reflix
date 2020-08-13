@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 class Landing extends Component {
   render() {
-    const { users } = this.props;
+    const { users, updateCurrentUser } = this.props;
     return (
       <>
         <nav className="navbar">
@@ -21,7 +21,11 @@ class Landing extends Component {
           <h1>Who's Watching ?</h1>
           <div className="users-container">
             {users.map((u) => (
-              <User key={u.name} userData={u} />
+              <User
+                key={u.name}
+                updateCurrentUser={updateCurrentUser}
+                userData={u}
+              />
             ))}
           </div>
         </div>

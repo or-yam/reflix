@@ -11,12 +11,17 @@ class App extends Component {
     super();
     this.state = {
       users: dummyUsers,
-      currentUser: dummyUsers[0],
+      currentUser: {},
       moviesList: movieCatalog,
       searchField: '',
       moviesRented: [],
     };
   }
+
+  updateCurrentUser = (id) => {
+    const user = this.state.users.find((u) => u.id === id);
+    this.setState({ currentUser: user });
+  };
 
   onSearchChange = (event) => {
     this.setState({ searchField: event.target.value });
@@ -66,7 +71,11 @@ class App extends Component {
             path="/"
             exact
             render={({ match }) => (
-              <Landing match={match} users={state.users} />
+              <Landing
+                match={match}
+                updateCurrentUser={this.updateCurrentUser}
+                users={state.users}
+              />
             )}
           />
           <Route

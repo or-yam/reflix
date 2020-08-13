@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 
 export class UserCard extends Component {
   render() {
-    const { userData } = this.props;
+    const { userData, updateCurrentUser } = this.props;
+    const upDateUser = () => {
+      updateCurrentUser(userData.id);
+    };
     return (
       <div className="user-box">
-        <Link to="/catalog">
+        <Link to="/catalog" onClick={upDateUser}>
           <img src={userData.img} alt="img" />
           <h2>{userData.name}</h2>
           <h3>Budget: {userData.budget} $</h3>

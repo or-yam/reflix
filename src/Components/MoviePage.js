@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 export class MoviePage extends Component {
   render() {
     const movieID = this.props.match.params.id;
-    const movieData = this.props.movies.find((m) => m.id === movieID);
-
+    const movieData = this.props.movies.find((m) => m.id === parseInt(movieID));
     return (
       <div className="movie-page">
         <h1>
