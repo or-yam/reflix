@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import User from './UserCard';
 import '../styles/Landing.css';
-import { Link } from 'react-router-dom';
 
 class Landing extends Component {
   render() {
     const { users, updateCurrentUser } = this.props;
+
     return (
       <>
         <nav className="navbar">

@@ -88,6 +88,26 @@ const moviesCatalog = [
     descrShort:
       'Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers and supposedly Jewish jewelers fight to track down a priceless stolen diamond.',
   },
+  {
+    id: 9,
+    isRented: false,
+    title: 'Watchmen',
+    year: 2009,
+    img:
+      'https://m.media-amazon.com/images/M/MV5BY2IzNGNiODgtOWYzOS00OTI0LTgxZTUtOTA5OTQ5YmI3NGUzXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,666,1000_AL_.jpg',
+    descrShort:
+      'In 1985 where former superheroes exist, the murder of a colleague sends active vigilante Rorschach into his own sprawling investigation, uncovering something that could completely change the course of history as we know it.',
+  },
+  {
+    id: 10,
+    isRented: false,
+    title: 'The Good The Bad And The Ugly',
+    year: 1966,
+    img:
+      'https://m.media-amazon.com/images/M/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_SY1000_CR0,0,656,1000_AL_.jpg',
+    descrShort:
+      'A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.',
+  },
 ];
 
 export default moviesCatalog;

@@ -4,16 +4,14 @@
   --text-color: #e0e0e0;
   --secondary-text-color: #b7b7b7;
 }
-a {
-  text-decoration: none;
-  color: var(--text-color);
-}
+
 * {
   margin: 0;
   padding: 0;
   outline: none;
   font-family: 'Bebas Neue', cursive;
 }
+
 body {
   width: 100vw;
   height: 100vh;
@@ -21,24 +19,7 @@ body {
   color: var(--text-color);
 }
 
-#logo {
-  width: 120px;
-}
-
-.navbar {
-  display: flex;
-  padding: 14px;
-}
-
-.title-container {
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.title-container h1{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 80px;
+a {
+  text-decoration: none;
+  color: var(--text-color);
 }

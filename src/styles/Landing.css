@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  padding: 14px;
+}
+
+#logo {
+  width: 120px;
+}
+
+.title-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.title-container h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: 80px;
+}

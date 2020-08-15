@@ -1,5 +1,5 @@
 .users-container {
-margin-top: 30px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -16,17 +16,15 @@ margin-top: 30px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
- 
 }
 
-.user-box img{
+.user-box img {
   border: 2px solid rgb(77, 74, 74);
 }
 
 .user-box img:hover {
   border: 5px solid #fff;
   color: #fff;
-
 }
 
 .user-box img {

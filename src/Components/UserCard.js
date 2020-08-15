@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../styles/UserCard.css';
 import { Link } from 'react-router-dom';
+import '../styles/UserCard.css';
 
 export class UserCard extends Component {
   render() {
@@ -8,6 +8,7 @@ export class UserCard extends Component {
     const upDateUser = () => {
       updateCurrentUser(userData.id);
     };
+
     return (
       <div className="user-box">
         <Link to="/catalog" onClick={upDateUser}>
