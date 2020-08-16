@@ -5,6 +5,7 @@
 you can login with existing users, each user have different budget.
 the user can search and choose between movies from the catalog depending on his budget.
 each movie has also an about page with some information.
+works with external api.
 
 ---
 
@@ -26,7 +27,8 @@ each movie has also an about page with some information.
 ### Tools and Libraries
 
 1. Build with React.
-2. data and images from [Netflix](https://brand.netflix.com/en/assets/) & [IMDB](https://www.imdb.com/)
+2. dummy data and images from [Netflix](https://brand.netflix.com/en/assets/) & [IMDB](https://www.imdb.com/)
+3. external api: [TMDB](https://www.themoviedb.org/)
 
 ---
 
