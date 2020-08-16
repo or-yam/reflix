@@ -4,7 +4,7 @@ import User from './UserCard';
 import '../styles/Landing.css';
 
 export default function Landing(props) {
-  const { users, updateCurrentUser } = props;
+  const { users, getCurrentUser } = props;
   return (
     <div>
       <nav className="navbar">
@@ -22,7 +22,7 @@ export default function Landing(props) {
           {users.map((u) => (
             <User
               key={u.name}
-              updateCurrentUser={updateCurrentUser}
+              getCurrentUser={getCurrentUser}
               userData={u}
             />
           ))}
@@ -31,39 +31,3 @@ export default function Landing(props) {
     </div>
   );
 }
-
-/*
-class Landing extends Component {
-  render() {
-    const { users, updateCurrentUser } = this.props;
-
-    return (
-      <>
-        <nav className="navbar">
-          <Link to="/">
-            <img
-              id="logo"
-              src="https://brand.netflix.com/static/assets/icons/netflix_logo.svg"
-              alt="logo"
-            />
-          </Link>
-        </nav>
-        <div className="title-container">
-          <h1>Who's Watching ?</h1>
-          <div className="users-container">
-            {users.map((u) => (
-              <User
-                key={u.name}
-                updateCurrentUser={updateCurrentUser}
-                userData={u}
-              />
-            ))}
-          </div>
-        </div>
-      </>
-    );
-  }
-}
-
-export default Landing;
-*/
