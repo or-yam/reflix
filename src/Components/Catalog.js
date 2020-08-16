@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
 import '../styles/Catalog.css';
 
-export default class Catalog extends Component {
-  render() {
-    const { movies, rented, user, onSearchChange, updateRent } = this.props;
+export default function Catalog(props) {
+  const { movies, rented, user, onSearchChange, updateRent } = props;
 
-    return (
+  return (
+    <div>
       <div className="catalog-container">
         <nav className="search-nav">
           <Link to="/">
@@ -49,12 +49,12 @@ export default class Catalog extends Component {
                 key={m.id}
                 updateRent={updateRent}
                 movieData={m}
-                user={this.props.user}
+                user={user}
               />
             ))}
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
