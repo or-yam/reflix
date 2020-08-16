@@ -20,14 +20,11 @@
 
 .user-box img {
   border: 2px solid rgb(77, 74, 74);
+  width: 12rem;
+  height: auto;
 }
 
 .user-box img:hover {
   border: 5px solid #fff;
   color: #fff;
-}
-
-.user-box img {
-  width: 12rem;
-  height: auto;
 }

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import '../styles/UserCard.css';
 
 export default function UserCard(props) {
-  const { userData, updateCurrentUser } = props;
+  const { userData, getCurrentUser } = props;
   const upDateUser = () => {
-    updateCurrentUser(userData.id);
+    getCurrentUser(userData.id);
   };
   return (
     <div className="user-box">
