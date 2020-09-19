@@ -18,12 +18,11 @@ export default function App() {
   const [moviesRented, setMoviesRented] = useState([]);
   const [searchField, setSearchField] = useState('');
 
-  const API_KEY = '22fc91e4eaa31cd6b9aaa5f3a542def7';
   const IMG_PREFIX = 'https://image.tmdb.org/t/p/w370_and_h556_bestv2';
 
   useEffect(() => {
     axios(
-      `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+      `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`
     ).then((res) => {
       const list = res.data.results.map((m) => ({
         id: m.id,
