@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/MovieCard.css';
 
-export default function MovieCard(props) {
-  const { movieData, updateRent } = props;
+export default function MovieCard({ movieData, updateRent }) {
   const updateData = () => {
     updateRent(movieData.id);
   };
@@ -14,7 +13,7 @@ export default function MovieCard(props) {
         <img src={movieData.img} alt="movieImg" />
       </Link>
       <button onClick={updateData} className="addRmvBtn">
-        {movieData.isRented ? '-' : '+'}
+        {movieData.isRented ? '−' : '✚'}
       </button>
     </div>
   );

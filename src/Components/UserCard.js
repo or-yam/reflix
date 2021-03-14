@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/UserCard.css';
 
-export default function UserCard(props) {
-  const { userData, getCurrentUser } = props;
+export default function UserCard({ userData, getCurrentUser }) {
   const upDateUser = () => {
     getCurrentUser(userData.id);
   };
+
   return (
     <div className="user-box">
       <Link to="/catalog" onClick={upDateUser}>

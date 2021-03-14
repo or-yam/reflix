@@ -1,60 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import MovieCard from './MovieCard';
 import '../styles/Catalog.css';
 
-export default function Catalog(props) {
-  const { movies, rented, user, onSearchChange, updateRent } = props;
+export default function Catalog({ movies, rented, user, onSearchChange, updateRent }) {
+  const { img, name, budget } = user;
 
+  if (!user.id) {
+    return <Redirect to="/" />;
+  }
   return (
-    <div>
+    <>
       <div className="catalog-container">
         <nav className="search-nav">
           <Link to="/">
-            <img
-              id="logo"
-              src="https://brand.netflix.com/static/assets/icons/netflix_logo.svg"
-              alt="logo"
-            />
+            <img id="logo" src="https://brand.netflix.com/static/assets/icons/netflix_logo.svg" alt="logo" />
           </Link>
-          <input
-            type="search"
-            placeholder="Search for title..."
-            id="search-input"
-            onChange={onSearchChange}
-          />
+          <input type="search" placeholder="Search for title..." id="search-input" onChange={onSearchChange} />
           <div className="user-budget">
-            <img src={user.img} alt="user" />
-            <span>{user.name}</span>
-            <span>Budget: {user.budget}$</span>
+            <img src={img} alt="user" />
+            <span>{name}</span>
+            <span>Budget: {budget}$</span>
           </div>
         </nav>
 
         <div className="rented-container">
-          {rented.length ? <h3>Rented</h3> : null}
+          {rented.length > 0 && <h3>Rented</h3>}
           <div className="movies-container">
-            {rented.map((m) =>
-              m ? (
-                <MovieCard key={m.id} updateRent={updateRent} movieData={m} />
-              ) : null
-            )}
+            {rented.map(movie => movie && <MovieCard key={movie.id} updateRent={updateRent} movieData={movie} />)}
           </div>
         </div>
 
         <div className="catalog-container">
           <h3>Catalog</h3>
           <div className="movies-container">
-            {movies.map((m) => (
-              <MovieCard
-                key={m.id}
-                updateRent={updateRent}
-                movieData={m}
-                user={user}
-              />
+            {movies.map(movie => (
+              <MovieCard key={movie.id} updateRent={updateRent} movieData={movie} user={user} />
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

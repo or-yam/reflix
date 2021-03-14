@@ -1,10 +1,14 @@
 import React from 'react';
 import '../styles/MoviePage.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
-export default function MoviePage(props) {
-  const movieID = props.match.params.id;
-  const movieData = props.movies.find((m) => m.id === parseInt(movieID));
+export default function MoviePage({ match, movies }) {
+  const { id } = match.params;
+  const movieData = movies.find(m => m.id === parseInt(id));
+
+  if (!movieData) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div className="movie-page">
